@@ -14,9 +14,6 @@ const Header = () => {
         <a href="mailto:wyattwilson916@gmail.com" className="text-slate-600 hover:text-indigo-600 transition-colors">
           wyattwilson916@gmail.com
         </a>
-        <Badge variant="outline" className="mt-1 border-indigo-200 text-indigo-600">
-          Portfolio Coming Soon
-        </Badge>
       </div>
     </header>
   );

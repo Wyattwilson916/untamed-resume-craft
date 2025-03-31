@@ -1,6 +1,4 @@
 
-import { Badge } from "@/components/ui/badge";
-
 const SkillSection = () => {
   const skills = [
     "Unity (2D gameplay & mobile deployment)",
@@ -18,11 +16,12 @@ const SkillSection = () => {
   return (
     <section className="mb-8">
       <h2 className="text-lg font-semibold text-slate-800 mb-3">Skills</h2>
-      <div className="flex flex-wrap gap-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-4">
         {skills.map((skill, index) => (
-          <Badge key={index} className="bg-indigo-100 hover:bg-indigo-200 text-indigo-800 py-1.5 px-3">
-            {skill}
-          </Badge>
+          <div key={index} className="text-slate-600 flex items-start">
+            <span className="text-indigo-500 mr-2">•</span>
+            <span>{skill}</span>
+          </div>
         ))}
       </div>
     </section>

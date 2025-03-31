@@ -8,7 +8,6 @@ import SkillSection from "@/components/SkillSection";
 import ProjectSection from "@/components/ProjectSection";
 import ToolsSection from "@/components/ToolsSection";
 import EducationSection from "@/components/EducationSection";
-import ContactFooter from "@/components/ContactFooter";
 
 const Index = () => {
   return (
@@ -29,7 +28,6 @@ const Index = () => {
           <ToolsSection />
           <ProjectSection />
           <EducationSection />
-          <ContactFooter />
         </Card>
       </div>
     </div>

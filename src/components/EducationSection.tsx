@@ -27,7 +27,7 @@ const EducationSection = () => {
         
         <div className="pt-4">
           <h3 className="font-medium text-slate-800">Referral</h3>
-          <p className="text-slate-600">References available upon request, including a current ePlus employee.</p>
+          <p className="text-slate-600">References available upon request.</p>
         </div>
       </div>
     </section>
@@ -35,4 +35,3 @@ const EducationSection = () => {
 };
 
 export default EducationSection;
-

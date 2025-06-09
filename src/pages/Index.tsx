@@ -2,10 +2,7 @@
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import Header from "@/components/Header";
-import SummarySection from "@/components/SummarySection";
-import SkillsSection from "@/components/SkillsSection";
-import ExperienceSection from "@/components/ExperienceSection";
-import EducationSection from "@/components/EducationSection";
+import CoverLetter from "@/components/CoverLetter";
 
 const Index = () => {
   return (
@@ -14,10 +11,7 @@ const Index = () => {
         <Card className="p-8 shadow-md bg-white">
           <Header />
           <Separator className="my-6" />
-          <SummarySection />
-          <SkillsSection />
-          <ExperienceSection />
-          <EducationSection />
+          <CoverLetter />
         </Card>
       </div>
     </div>

@@ -121,7 +121,7 @@ I'm eager to join a team that values technical depth and user focused support. I
         </div>
       </div>
       
-      <style jsx>{`
+      <style>{`
         @media print {
           body * {
             visibility: hidden;

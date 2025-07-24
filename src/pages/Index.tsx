@@ -13,7 +13,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-slate-50">
       <div className="container max-w-6xl px-4 py-8 mx-auto">
-        <div className="mb-4 flex justify-end">
+        <div className="mb-4 flex justify-end gap-2">
+          <Link to="/resume-tool">
+            <Button variant="outline">Edit Resume</Button>
+          </Link>
           <Link to="/cover-letter">
             <Button variant="outline">Create Cover Letter</Button>
           </Link>

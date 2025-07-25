@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Download } from "lucide-react";
 
@@ -20,38 +19,25 @@ const ResumeTool = () => {
     "Customer-focused technical specialist with hands-on experience solving network, hardware, and software issues in real-world settings. Strong background in client communication, system troubleshooting, and independent tech projects. Previously handled customer operations solo for a small business, and independently developed and shipped a mobile game. Currently studying for CCNA certification and seeking to grow in a client-facing support role."
   );
 
-  // Skills data
-  const [skills, setSkills] = useState({
-    "Customer & Communication": [
-      "Client-facing problem solving and technical explanation",
-      "Remote troubleshooting and guided support",
-      "Cross-functional collaboration and workflow coordination",
-      "Documentation and process improvement"
-    ],
-    "Technical Troubleshooting": [
-      "Network diagnostics (TCP/IP, DNS, DHCP)",
-      "Hardware/software installation and configuration",
-      "System performance analysis and optimization",
-      "Security protocols and access management"
-    ],
-    "Software & Tools": [
-      "Unity (2D gameplay & mobile deployment)",
-      "C# (OOP, event systems, coroutines)",
-      "Version control (Git/GitHub, Unity VCS)",
-      "Remote desktop and diagnostic tools"
-    ],
-    "Certifications & Learning": [
-      "Currently studying for Cisco CCNA",
-      "Full Stack Academy Web Development graduate",
-      "Self-directed learning and skill development",
-      "Industry best practices and emerging technologies"
-    ]
-  });
+  // Skills data - using the same structure as the original
+  const [skills, setSkills] = useState([
+    "Unity (2D gameplay & mobile deployment)",
+    "C# (OOP, event systems, coroutines)",
+    "Custom spline-based movement systems",
+    "ScriptableObject-driven architecture",
+    "Timing-based input and feedback systems",
+    "UI/UX design for mobile and touch input",
+    "Performance optimization for mobile",
+    "Scene/state management and transitions",
+    "Data tracking and Unity Analytics",
+    "Solo development workflow"
+  ]);
 
   // Experience data
   const [experiences, setExperiences] = useState([
     {
       title: "Independent Game Developer",
+      company: "Personal Project",
       location: "Remote",
       dates: "2022 – 2024",
       responsibilities: [
@@ -65,6 +51,7 @@ const ResumeTool = () => {
     },
     {
       title: "Operations Specialist",
+      company: "Local Business",
       location: "Jacksonville, FL",
       dates: "2021 – 2022",
       responsibilities: [
@@ -75,6 +62,18 @@ const ResumeTool = () => {
         "Maintained detailed records and provided regular reporting on operational metrics and customer feedback"
       ]
     }
+  ]);
+
+  // Tools data
+  const [tools, setTools] = useState([
+    "Unity – custom tooling, animation systems, and editor scripting",
+    "Visual Studio – structured C# development and debugging",
+    "Unity Version Control (UVCS) & GitHub",
+    "Unity Cloud & Unity Analytics for backend data tracking",
+    "Blender – 3D asset prep and basic integration",
+    "Miro – system design and planning",
+    "Trello – solo task management and workflow organization",
+    "Unity Profiler – mobile performance testing and optimization"
   ]);
 
   // Education data
@@ -101,11 +100,12 @@ const ResumeTool = () => {
     window.print();
   };
 
-  const updateSkill = (category: string, index: number, value: string) => {
-    setSkills(prev => ({
-      ...prev,
-      [category]: prev[category].map((skill, i) => i === index ? value : skill)
-    }));
+  const updateSkill = (index: number, value: string) => {
+    setSkills(prev => prev.map((skill, i) => i === index ? value : skill));
+  };
+
+  const updateTool = (index: number, value: string) => {
+    setTools(prev => prev.map((tool, i) => i === index ? value : tool));
   };
 
   const updateExperience = (expIndex: number, field: string, value: string | string[]) => {
@@ -146,7 +146,7 @@ const ResumeTool = () => {
         </div>
 
         <Card className="p-8 shadow-md bg-white">
-          {/* Header Section */}
+          {/* Header Section - Matching original exactly */}
           <header className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
             <div>
               <Input
@@ -178,7 +178,7 @@ const ResumeTool = () => {
 
           <Separator className="my-6" />
 
-          {/* Summary Section */}
+          {/* Summary Section - Matching original exactly */}
           <section className="mb-8">
             <h2 className="text-lg font-semibold text-slate-800 mb-2">Professional Summary</h2>
             <Textarea
@@ -188,75 +188,95 @@ const ResumeTool = () => {
             />
           </section>
 
-          {/* Skills Section */}
+          {/* Skills Section - Matching original exactly */}
           <section className="mb-8">
             <h2 className="text-lg font-semibold text-slate-800 mb-3">Skills</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {Object.entries(skills).map(([category, skillList]) => (
-                <div key={category}>
-                  <h3 className="font-medium text-slate-800 mb-2">{category}</h3>
-                  <div className="space-y-1">
-                    {skillList.map((skill, index) => (
-                      <div key={index} className="flex items-start">
-                        <span className="text-indigo-500 mr-2 mt-1">•</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-4">
+              {skills.map((skill, index) => (
+                <div key={index} className="text-slate-600 flex items-start">
+                  <span className="text-indigo-500 mr-2">•</span>
+                  <Input
+                    value={skill}
+                    onChange={(e) => updateSkill(index, e.target.value)}
+                    className="border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 flex-1 text-slate-600"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Tools Section - Matching original exactly */}
+          <section className="mb-8">
+            <h2 className="text-lg font-semibold text-slate-800 mb-3">Tools & Tech</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+              {tools.map((tool, index) => (
+                <div key={index} className="flex items-center">
+                  <span className="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
+                  <Input
+                    value={tool}
+                    onChange={(e) => updateTool(index, e.target.value)}
+                    className="text-slate-600 border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 flex-1"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Experience Section - Matching original exactly */}
+          <section className="mb-8">
+            <h2 className="text-lg font-semibold text-slate-800 mb-3">Experience</h2>
+            <div className="space-y-6">
+              {experiences.map((experience, expIndex) => (
+                <div key={expIndex}>
+                  <div className="mb-4">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
+                      <div>
                         <Input
-                          value={skill}
-                          onChange={(e) => updateSkill(category, index, e.target.value)}
-                          className="text-slate-600 border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 flex-1"
+                          value={experience.title}
+                          onChange={(e) => updateExperience(expIndex, 'title', e.target.value)}
+                          className="font-semibold text-slate-800 border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
+                        />
+                        <Input
+                          value={experience.company}
+                          onChange={(e) => updateExperience(expIndex, 'company', e.target.value)}
+                          className="text-slate-600 border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
                         />
                       </div>
-                    ))}
+                      <div className="flex flex-col md:items-end text-sm text-slate-600">
+                        <Input
+                          value={experience.location}
+                          onChange={(e) => updateExperience(expIndex, 'location', e.target.value)}
+                          className="border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-right text-sm"
+                        />
+                        <Input
+                          value={experience.dates}
+                          onChange={(e) => updateExperience(expIndex, 'dates', e.target.value)}
+                          className="border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-right text-sm"
+                        />
+                      </div>
+                    </div>
+                    <ul className="space-y-1 text-slate-600">
+                      {experience.responsibilities.map((responsibility, respIndex) => (
+                        <li key={respIndex} className="flex items-start">
+                          <span className="text-indigo-400 mr-2 mt-1">•</span>
+                          <Textarea
+                            value={responsibility}
+                            onChange={(e) => updateExperienceResponsibility(expIndex, respIndex, e.target.value)}
+                            className="border-none p-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 resize-none min-h-[20px] flex-1 text-slate-600"
+                          />
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               ))}
             </div>
           </section>
 
-          {/* Experience Section */}
-          <section className="mb-8">
-            <h2 className="text-lg font-semibold text-slate-800 mb-3">Experience</h2>
-            <div className="space-y-6">
-              {experiences.map((experience, expIndex) => (
-                <Card key={expIndex} className="p-4 border-l-4 border-l-indigo-500">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
-                    <Input
-                      value={experience.title}
-                      onChange={(e) => updateExperience(expIndex, 'title', e.target.value)}
-                      className="font-semibold text-slate-800 border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
-                    />
-                    <div className="flex flex-col md:items-end text-sm text-slate-600">
-                      <Input
-                        value={experience.location}
-                        onChange={(e) => updateExperience(expIndex, 'location', e.target.value)}
-                        className="border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-right text-sm"
-                      />
-                      <Input
-                        value={experience.dates}
-                        onChange={(e) => updateExperience(expIndex, 'dates', e.target.value)}
-                        className="border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-right text-sm"
-                      />
-                    </div>
-                  </div>
-                  <ul className="space-y-1 text-slate-600">
-                    {experience.responsibilities.map((responsibility, respIndex) => (
-                      <li key={respIndex} className="flex items-start">
-                        <span className="text-indigo-400 mr-2 mt-1">•</span>
-                        <Textarea
-                          value={responsibility}
-                          onChange={(e) => updateExperienceResponsibility(expIndex, respIndex, e.target.value)}
-                          className="border-none p-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 resize-none min-h-[20px] flex-1"
-                        />
-                      </li>
-                    ))}
-                  </ul>
-                </Card>
-              ))}
-            </div>
-          </section>
-
-          {/* Education Section */}
+          {/* Education Section - Matching original exactly */}
           <section className="mb-8">
             <h2 className="text-lg font-semibold text-slate-800 mb-3">Education & Certification</h2>
+            
             <div className="space-y-4">
               {education.map((edu, index) => (
                 <div key={index}>

@@ -159,12 +159,12 @@ const ResumeTool = () => {
               <Input
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                className="text-slate-600 border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-right"
+                className="text-slate-600 border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:text-right"
               />
               <Input
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="text-slate-600 hover:text-indigo-600 transition-colors border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-right"
+                className="text-slate-600 hover:text-indigo-600 transition-colors border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:text-right w-full"
               />
             </div>
           </header>
@@ -219,17 +219,17 @@ const ResumeTool = () => {
                       onChange={(e) => updateExperience(expIndex, 'title', e.target.value)}
                       className="text-lg font-semibold text-indigo-900 border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
                     />
-                    <div className="text-sm text-slate-600 flex gap-2">
+                    <div className="text-sm text-slate-600 flex items-center whitespace-nowrap">
                       <Input
                         value={experience.location}
                         onChange={(e) => updateExperience(expIndex, 'location', e.target.value)}
-                        className="border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-sm text-slate-600"
+                        className="border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-sm text-slate-600 text-right min-w-0"
                       />
-                      <span>|</span>
+                      <span className="mx-2">|</span>
                       <Input
                         value={experience.dates}
                         onChange={(e) => updateExperience(expIndex, 'dates', e.target.value)}
-                        className="border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-sm text-slate-600"
+                        className="border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-sm text-slate-600 text-right min-w-0"
                       />
                     </div>
                   </div>

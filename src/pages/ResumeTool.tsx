@@ -19,61 +19,55 @@ const ResumeTool = () => {
     "Customer-focused technical specialist with hands-on experience solving network, hardware, and software issues in real-world settings. Strong background in client communication, system troubleshooting, and independent tech projects. Previously handled customer operations solo for a small business, and independently developed and shipped a mobile game. Currently studying for CCNA certification and seeking to grow in a client-facing support role."
   );
 
-  // Skills data - using the same structure as the original
-  const [skills, setSkills] = useState([
-    "Unity (2D gameplay & mobile deployment)",
-    "C# (OOP, event systems, coroutines)",
-    "Custom spline-based movement systems",
-    "ScriptableObject-driven architecture",
-    "Timing-based input and feedback systems",
-    "UI/UX design for mobile and touch input",
-    "Performance optimization for mobile",
-    "Scene/state management and transitions",
-    "Data tracking and Unity Analytics",
-    "Solo development workflow"
-  ]);
+  // Skills data - matching original exactly
+  const [skills, setSkills] = useState({
+    "Customer & Communication": [
+      "Phone-based client scheduling and problem-solving",
+      "Professional, responsive communication in customer-facing settings",
+      "Experience resolving and tracking client issues independently"
+    ],
+    "Technical Troubleshooting": [
+      "Diagnosing home networking issues (routers, modems, basic configurations)",
+      "Building and configuring personal computers",
+      "Foundational knowledge of networking concepts (LAN, WAN, VLANs, IP addressing)"
+    ],
+    "Software & Tools": [
+      "Microsoft Office Suite (Excel, Word, Outlook)",
+      "Unity + Visual Studio (custom system design, C# scripting)",
+      "Database architecture and management (player tracking + data systems in BeTuned)"
+    ],
+    "Certifications & Learning": [
+      "Currently studying for Cisco CCNA certification",
+      "Graduate of Full Stack web development bootcamp (JavaScript, HTML/CSS, API integration)"
+    ]
+  });
 
-  // Experience data
+  // Experience data - matching original exactly
   const [experiences, setExperiences] = useState([
     {
-      title: "Independent Game Developer",
-      company: "Personal Project",
-      location: "Remote",
-      dates: "2022 – 2024",
+      title: "Manager & Spray Technician — Ross Turf & Ornamental Inc.",
+      location: "Jacksonville, FL",
+      dates: "Sep. 2016 – Apr. 2021",
       responsibilities: [
-        "Developed and shipped a complete mobile game using Unity and C#, handling all aspects from concept to deployment",
-        "Implemented custom spline-based movement systems and timing-sensitive gameplay mechanics",
-        "Created scalable ScriptableObject architecture for game data and configuration management",
-        "Optimized performance for mobile platforms, ensuring smooth gameplay across various device specifications",
-        "Integrated Unity Analytics for player behavior tracking and data-driven design decisions",
-        "Managed solo development workflow including version control, testing, and iterative design processes"
+        "Managed day-to-day operations for a small landscaping business, including scheduling, customer communication, and service coordination",
+        "Supervised and trained one employee while maintaining personal responsibility for on-site treatments and service quality",
+        "Handled all inbound client calls, scheduled jobs, and resolved service-related issues independently",
+        "Maintained strong customer relationships through regular follow-up and personalized support",
+        "Built internal systems to track appointments, job completion, and recurring customer needs"
       ]
     },
     {
-      title: "Operations Specialist",
-      company: "Local Business",
-      location: "Jacksonville, FL",
-      dates: "2021 – 2022",
+      title: "Lead Developer – BeTuned",
+      location: "Remote",
+      dates: "Aug. 2024 – Apr. 2025",
       responsibilities: [
-        "Independently managed all customer-facing operations for a small business, serving as the primary point of contact",
-        "Handled technical troubleshooting, order processing, and customer relationship management",
-        "Developed efficient workflows and documentation to streamline operations and improve customer satisfaction",
-        "Collaborated cross-functionally to resolve complex issues and implement process improvements",
-        "Maintained detailed records and provided regular reporting on operational metrics and customer feedback"
+        "Built all technical systems for a mobile rhythm game, including gameplay mechanics, UI, and backend logic",
+        "Designed and implemented a custom data tracking system to collect and manage player performance metrics",
+        "Managed scene transitions, global settings, and feedback systems with modular, scalable code",
+        "Collaborated with designers and stakeholders to align game features with therapeutic goals",
+        "Debugged and optimized the application for mobile performance, handling all technical problem-solving independently"
       ]
     }
-  ]);
-
-  // Tools data
-  const [tools, setTools] = useState([
-    "Unity – custom tooling, animation systems, and editor scripting",
-    "Visual Studio – structured C# development and debugging",
-    "Unity Version Control (UVCS) & GitHub",
-    "Unity Cloud & Unity Analytics for backend data tracking",
-    "Blender – 3D asset prep and basic integration",
-    "Miro – system design and planning",
-    "Trello – solo task management and workflow organization",
-    "Unity Profiler – mobile performance testing and optimization"
   ]);
 
   // Education data
@@ -100,12 +94,11 @@ const ResumeTool = () => {
     window.print();
   };
 
-  const updateSkill = (index: number, value: string) => {
-    setSkills(prev => prev.map((skill, i) => i === index ? value : skill));
-  };
-
-  const updateTool = (index: number, value: string) => {
-    setTools(prev => prev.map((tool, i) => i === index ? value : tool));
+  const updateSkill = (category: string, index: number, value: string) => {
+    setSkills(prev => ({
+      ...prev,
+      [category]: prev[category].map((skill, i) => i === index ? value : skill)
+    }));
   };
 
   const updateExperience = (expIndex: number, field: string, value: string | string[]) => {
@@ -191,32 +184,23 @@ const ResumeTool = () => {
           {/* Skills Section - Matching original exactly */}
           <section className="mb-8">
             <h2 className="text-lg font-semibold text-slate-800 mb-3">Skills</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-4">
-              {skills.map((skill, index) => (
-                <div key={index} className="text-slate-600 flex items-start">
-                  <span className="text-indigo-500 mr-2">•</span>
-                  <Input
-                    value={skill}
-                    onChange={(e) => updateSkill(index, e.target.value)}
-                    className="border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 flex-1 text-slate-600"
-                  />
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Tools Section - Matching original exactly */}
-          <section className="mb-8">
-            <h2 className="text-lg font-semibold text-slate-800 mb-3">Tools & Tech</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-              {tools.map((tool, index) => (
-                <div key={index} className="flex items-center">
-                  <span className="w-2 h-2 bg-indigo-400 rounded-full mr-2"></span>
-                  <Input
-                    value={tool}
-                    onChange={(e) => updateTool(index, e.target.value)}
-                    className="text-slate-600 border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 flex-1"
-                  />
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+              {Object.entries(skills).map(([category, skillList]) => (
+                <div key={category}>
+                  <h3 className="font-medium text-indigo-700 mb-2">{category}</h3>
+                  <div className="grid grid-cols-1 gap-y-2">
+                    {skillList.map((skill, index) => (
+                      <div key={index} className="text-slate-600 flex items-start">
+                        <span className="text-indigo-500 mr-2">•</span>
+                        <Textarea
+                          value={skill}
+                          onChange={(e) => updateSkill(category, index, e.target.value)}
+                          className="border-none p-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 resize-none min-h-[20px] flex-1 text-slate-600"
+                        />
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
@@ -225,50 +209,46 @@ const ResumeTool = () => {
           {/* Experience Section - Matching original exactly */}
           <section className="mb-8">
             <h2 className="text-lg font-semibold text-slate-800 mb-3">Experience</h2>
-            <div className="space-y-6">
+            
+            <div className="space-y-4">
               {experiences.map((experience, expIndex) => (
-                <div key={expIndex}>
-                  <div className="mb-4">
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-2">
-                      <div>
-                        <Input
-                          value={experience.title}
-                          onChange={(e) => updateExperience(expIndex, 'title', e.target.value)}
-                          className="font-semibold text-slate-800 border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
-                        />
-                        <Input
-                          value={experience.company}
-                          onChange={(e) => updateExperience(expIndex, 'company', e.target.value)}
-                          className="text-slate-600 border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
-                        />
-                      </div>
-                      <div className="flex flex-col md:items-end text-sm text-slate-600">
-                        <Input
-                          value={experience.location}
-                          onChange={(e) => updateExperience(expIndex, 'location', e.target.value)}
-                          className="border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-right text-sm"
-                        />
-                        <Input
-                          value={experience.dates}
-                          onChange={(e) => updateExperience(expIndex, 'dates', e.target.value)}
-                          className="border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-right text-sm"
-                        />
-                      </div>
+                <Card key={expIndex} className="p-5 border-l-4 border-l-indigo-500 bg-indigo-50/50">
+                  <div className="flex flex-col md:flex-row md:justify-between mb-2">
+                    <Input
+                      value={experience.title}
+                      onChange={(e) => updateExperience(expIndex, 'title', e.target.value)}
+                      className="text-lg font-semibold text-indigo-900 border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0"
+                    />
+                    <div className="text-sm text-slate-600 flex gap-2">
+                      <Input
+                        value={experience.location}
+                        onChange={(e) => updateExperience(expIndex, 'location', e.target.value)}
+                        className="border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-sm text-slate-600"
+                      />
+                      <span>|</span>
+                      <Input
+                        value={experience.dates}
+                        onChange={(e) => updateExperience(expIndex, 'dates', e.target.value)}
+                        className="border-none p-0 h-auto bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-sm text-slate-600"
+                      />
                     </div>
-                    <ul className="space-y-1 text-slate-600">
-                      {experience.responsibilities.map((responsibility, respIndex) => (
-                        <li key={respIndex} className="flex items-start">
-                          <span className="text-indigo-400 mr-2 mt-1">•</span>
-                          <Textarea
-                            value={responsibility}
-                            onChange={(e) => updateExperienceResponsibility(expIndex, respIndex, e.target.value)}
-                            className="border-none p-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 resize-none min-h-[20px] flex-1 text-slate-600"
-                          />
-                        </li>
-                      ))}
-                    </ul>
                   </div>
-                </div>
+                  
+                  <ul className="space-y-1.5 text-slate-700">
+                    {experience.responsibilities.map((responsibility, respIndex) => (
+                      <li key={respIndex} className="flex items-start">
+                        <svg className="h-5 w-5 text-indigo-500 mr-2 mt-0.5 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                        </svg>
+                        <Textarea
+                          value={responsibility}
+                          onChange={(e) => updateExperienceResponsibility(expIndex, respIndex, e.target.value)}
+                          className="border-none p-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 resize-none min-h-[20px] flex-1 text-slate-700"
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
               ))}
             </div>
           </section>

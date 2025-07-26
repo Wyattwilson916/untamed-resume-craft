@@ -4,10 +4,7 @@ const SummarySection = () => {
     <section className="mb-8">
       <h2 className="text-lg font-semibold text-slate-800 mb-2">Professional Summary</h2>
       <p className="text-slate-600 leading-relaxed">
-        Customer-focused technical specialist with hands-on experience solving network, hardware, and software issues in real-world settings. 
-        Strong background in client communication, system troubleshooting, and independent tech projects. Previously handled customer 
-        operations solo for a small business, and independently developed and shipped a mobile game. Currently studying for CCNA 
-        certification and seeking to grow in a client-facing support role.
+        Detail-oriented and adaptable developer with experience across the full stack, cloud platforms, and DevOps pipelines. Built all technical systems for a mobile rhythm game used in therapeutic research studies, including gameplay mechanics, UI, backend logic, and anonymized data collection. Strong collaborator with a proven ability to work independently and align software features with broader project goals.
       </p>
     </section>
   );

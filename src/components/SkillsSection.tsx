@@ -6,69 +6,41 @@ const SkillsSection = () => {
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
         <div>
-          <h3 className="font-medium text-indigo-700 mb-2">Customer & Communication</h3>
+          <h3 className="font-medium text-indigo-700 mb-2">Programming & Tools</h3>
           <div className="grid grid-cols-1 gap-y-2">
             <div className="text-slate-600 flex items-start">
               <span className="text-indigo-500 mr-2">•</span>
-              <span>Phone-based client scheduling and problem-solving</span>
-            </div>
-            <div className="text-slate-600 flex items-start">
-              <span className="text-indigo-500 mr-2">•</span>
-              <span>Professional, responsive communication in customer-facing settings</span>
-            </div>
-            <div className="text-slate-600 flex items-start">
-              <span className="text-indigo-500 mr-2">•</span>
-              <span>Experience resolving and tracking client issues independently</span>
+              <span>JavaScript, HTML, CSS, Node.js, C#, SQL, Git, GitHub, Visual Studio, VS Code</span>
             </div>
           </div>
         </div>
         
         <div>
-          <h3 className="font-medium text-indigo-700 mb-2">Technical Troubleshooting</h3>
+          <h3 className="font-medium text-indigo-700 mb-2">API & Backend Development</h3>
           <div className="grid grid-cols-1 gap-y-2">
             <div className="text-slate-600 flex items-start">
               <span className="text-indigo-500 mr-2">•</span>
-              <span>Diagnosing home networking issues (routers, modems, basic configurations)</span>
-            </div>
-            <div className="text-slate-600 flex items-start">
-              <span className="text-indigo-500 mr-2">•</span>
-              <span>Building and configuring personal computers</span>
-            </div>
-            <div className="text-slate-600 flex items-start">
-              <span className="text-indigo-500 mr-2">•</span>
-              <span>Foundational knowledge of networking concepts (LAN, WAN, VLANs, IP addressing)</span>
+              <span>RESTful APIs, Fetch API, JSON, JSON Web Tokens (JWT), Insomnia, Thunder Client, PostgreSQL, Postico, Postbird</span>
             </div>
           </div>
         </div>
         
         <div>
-          <h3 className="font-medium text-indigo-700 mb-2">Software & Tools</h3>
+          <h3 className="font-medium text-indigo-700 mb-2">DevOps, Deployment & Cloud</h3>
           <div className="grid grid-cols-1 gap-y-2">
             <div className="text-slate-600 flex items-start">
               <span className="text-indigo-500 mr-2">•</span>
-              <span>Microsoft Office Suite (Excel, Word, Outlook)</span>
-            </div>
-            <div className="text-slate-600 flex items-start">
-              <span className="text-indigo-500 mr-2">•</span>
-              <span>Unity + Visual Studio (custom system design, C# scripting)</span>
-            </div>
-            <div className="text-slate-600 flex items-start">
-              <span className="text-indigo-500 mr-2">•</span>
-              <span>Database architecture and management (player tracking + data systems in BeTuned)</span>
+              <span>CI/CD workflows, Unity Cloud Build, Unity DevOps, Netlify, Heroku, Unity IAM, basic cloud-based access control</span>
             </div>
           </div>
         </div>
         
         <div>
-          <h3 className="font-medium text-indigo-700 mb-2">Certifications & Learning</h3>
+          <h3 className="font-medium text-indigo-700 mb-2">Networking & Project Management</h3>
           <div className="grid grid-cols-1 gap-y-2">
             <div className="text-slate-600 flex items-start">
               <span className="text-indigo-500 mr-2">•</span>
-              <span>Currently studying for Cisco CCNA certification</span>
-            </div>
-            <div className="text-slate-600 flex items-start">
-              <span className="text-indigo-500 mr-2">•</span>
-              <span>Graduate of Full Stack web development bootcamp (JavaScript, HTML/CSS, API integration)</span>
+              <span>TCP/IP, subnets, VLANs, routers, switches (CCNA in progress), Trello (Kanban), Agile methodologies, Google Docs, Miro, Microsoft Office Suite</span>
             </div>
           </div>
         </div>

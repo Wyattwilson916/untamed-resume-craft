@@ -54,7 +54,44 @@ const Index = () => {
             display: none !important;
           }
           @page {
-            margin: 0.5in;
+            margin: 0.4in;
+            size: A4;
+          }
+          .container {
+            max-width: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+          }
+          h1 {
+            font-size: 24px !important;
+            margin-bottom: 4px !important;
+          }
+          h2 {
+            font-size: 16px !important;
+            margin-bottom: 8px !important;
+            margin-top: 12px !important;
+          }
+          h3 {
+            font-size: 14px !important;
+            margin-bottom: 4px !important;
+          }
+          p, li {
+            font-size: 11px !important;
+            line-height: 1.3 !important;
+            margin-bottom: 2px !important;
+          }
+          .card {
+            box-shadow: none !important;
+            padding: 16px !important;
+          }
+          .separator {
+            margin: 8px 0 !important;
+          }
+          ul {
+            margin-bottom: 8px !important;
+          }
+          section {
+            margin-bottom: 12px !important;
           }
         }
       `}</style>

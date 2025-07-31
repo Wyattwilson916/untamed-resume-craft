@@ -12,8 +12,8 @@ import { ArrowLeft } from "lucide-react";
 const CoverLetterTool = () => {
   // Header data
   const [name] = useState("Wyatt Wilson");
-  const [title] = useState("Technical Support Specialist");
-  const [location, setLocation] = useState("Jacksonville, FL");
+  const [title, setTitle] = useState("Technical Support Specialist");
+  const [location, setLocation] = useState("Orlando, FL");
   const [email, setEmail] = useState("wyattwilson916@gmail.com");
 
   // Cover letter content
@@ -63,6 +63,16 @@ I'm eager to join a team that values technical depth and user focused support. I
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="space-y-4">
+              <div>
+                <Label htmlFor="title">Job Title</Label>
+                <Input
+                  id="title"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  placeholder="Job Title"
+                />
+              </div>
+              
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <Label htmlFor="location">Location</Label>

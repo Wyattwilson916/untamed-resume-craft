@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 import { Download } from "lucide-react";
 import Header from "@/components/Header";
 import SummarySection from "@/components/SummarySection";
-import SkillsSection from "@/components/SkillsSection";
-import ExperienceSection from "@/components/ExperienceSection";
-import ProjectsSection from "@/components/ProjectsSection";
+import NewSkillsSection from "@/components/NewSkillsSection";
+import NewExperienceSection from "@/components/NewExperienceSection";
+import NewProjectsSection from "@/components/NewProjectsSection";
 import EducationSection from "@/components/EducationSection";
 
 const Index = () => {
@@ -23,9 +23,9 @@ const Index = () => {
           <Header />
           <Separator className="my-6" />
           <SummarySection />
-          <SkillsSection />
-          <ExperienceSection />
-          <ProjectsSection />
+          <NewSkillsSection />
+          <NewExperienceSection />
+          <NewProjectsSection />
           <EducationSection />
         </Card>
       </div>

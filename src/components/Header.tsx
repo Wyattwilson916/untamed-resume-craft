@@ -5,11 +5,11 @@ const Header = () => {
       <div>
         <h1 className="text-3xl md:text-4xl font-bold text-indigo-900">Wyatt Wilson</h1>
         <div className="flex items-center gap-2 mt-1">
-          <h2 className="text-xl font-medium text-indigo-600">Cyber Software Engineer</h2>
+          <h2 className="text-xl font-medium text-indigo-600">Technical Support Specialist | Aspiring Cybersecurity Professional</h2>
         </div>
       </div>
       <div className="flex flex-col items-start md:items-end">
-        <span className="text-slate-600">Jacksonville, FL</span>
+        <span className="text-slate-600">Orlando, FL</span>
         <a href="mailto:wyattwilson916@gmail.com" className="text-slate-600 hover:text-indigo-600 transition-colors">
           wyattwilson916@gmail.com
         </a>

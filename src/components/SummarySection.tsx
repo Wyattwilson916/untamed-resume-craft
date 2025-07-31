@@ -4,7 +4,7 @@ const SummarySection = () => {
     <section className="mb-8">
       <h2 className="text-lg font-semibold text-slate-800 mb-2">Professional Summary</h2>
       <p className="text-slate-600 leading-relaxed">
-        Detail-oriented and adaptable developer with experience across the full stack, cloud platforms, and DevOps pipelines. Built all technical systems for a mobile rhythm game used in therapeutic research studies, including gameplay mechanics, UI, backend logic, and anonymized data collection. Strong collaborator with a proven ability to work independently and align software features with broader project goals.
+        Adaptable and hands-on tech specialist with experience in software development, technical support, and system troubleshooting. Built secure, scalable systems for a mobile application used in clinical research, and previously managed customer-facing operations. Currently pursuing CCNA certification to deepen expertise in networking and cybersecurity. Eager to grow into an entry-level cybersecurity role through real-world problem-solving and continuous learning.
       </p>
     </section>
   );

@@ -1,9 +1,6 @@
 
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { Link } from "react-router-dom";
-import { Download } from "lucide-react";
 import Header from "@/components/Header";
 import SummarySection from "@/components/SummarySection";
 import NewSkillsSection from "@/components/NewSkillsSection";
@@ -12,9 +9,6 @@ import NewProjectsSection from "@/components/NewProjectsSection";
 import EducationSection from "@/components/EducationSection";
 
 const Index = () => {
-  const handlePrint = () => {
-    window.print();
-  };
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -28,19 +22,6 @@ const Index = () => {
           <NewProjectsSection />
           <EducationSection />
         </Card>
-      </div>
-      
-      <div className="fixed bottom-4 right-4 flex gap-2 print:hidden">
-        <Link to="/resume-tool">
-          <Button variant="outline">Edit Resume</Button>
-        </Link>
-        <Link to="/cover-letter">
-          <Button variant="outline">Create Cover Letter</Button>
-        </Link>
-        <Button onClick={handlePrint} className="flex items-center gap-2">
-          <Download className="h-4 w-4" />
-          Export to PDF
-        </Button>
       </div>
 
       <style>{`
